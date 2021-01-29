@@ -1,4 +1,74 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<body style="margin: 6% 37%;">
+<div class="alert alert-info" role="alert">
+
+<form method="post" action="/">
+  <div>
+   <h2>{{ header }}</h2><br />
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" value="{{  Data.email}}" name="email" class="form-control" id="exampleInputEmail1" />
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  {% if(errors.email) %}
+
+    <label class="form-check-label" style="color: red">{{ errors.email.msg }}</label>
+  {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" value="{{  user.password}}"class="form-control" id="exampleInputPassword1" />
+    {% if(errors.password) %}
+
+    <label class="form-check-label" style="color: red">{{ errors.password.msg }}</label>
+  {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Enter password again</label>
+    <input type="password" name="rePassword"class="form-control" id="exampleInputPassword1" />
+    {% if(errors.rePassword) %}
+
+    <label class="form-check-label" style="color: red">{{ errors.rePassword.msg }}</label>
+  {% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
+</div>
+
+<!-- The Modal -->
+
+</form>
+</div>
+</body>
+
+
+
+    {% block head_css %}
+    {# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> #}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            {# <link rel="stylesheet" type="text/css" href='index.css'> #}
+            {# <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> #}
+    
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <!-- <script src='jquery-3.4.1.js'></script>
 <link rel="bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
@@ -38,89 +108,4 @@
                                 {% endif %}
                                 </div>
                                 <div class="text-center py-4">
-                                    <button class="btn btn-outline-pink" type="submit">Register</button>
-    </main>
-                                    </body>
-                            </form>
-
-                                <!-- </div> -->
-                            <!-- Form register -->
-                        <!-- </div> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                <!-- Grid column -->
-            <!-- </div> -->
-            <!-- Grid row -->
-          
-        <!--MDB Forms-->
-      
-  <p>email: {{ Data.email}} password: {{ Data.rePassword}}</p>
-    
-        <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
-  
-<style>
-    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css);
-
-.hm-gradient {
-    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
-}
-.darken-grey-text {
-    color: #2E2E2E;
-}
-.danger-text {
-    color: #ff3547; }
-.default-text {
-    color: #2BBBAD; 
-}
-.info-text {
-    color: #33b5e5; 
-}
-.form-white .md-form label {
-  color: #fff; 
-}
-.form-white input[type=text]:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    -webkit-box-shadow: 0 1px 0 0 #fff;
-    box-shadow: 0 1px 0 0 #fff; 
-}
-.form-white input[type=text]:focus:not([readonly]) + label {
-    color: #fff; 
-}
-.form-white input[type=password]:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    -webkit-box-shadow: 0 1px 0 0 #fff;
-    box-shadow: 0 1px 0 0 #fff; 
-}
-.form-white input[type=password]:focus:not([readonly]) + label {
-    color: #fff; 
-}
-.form-white input[type=password], .form-white input[type=text] {
-    border-bottom: 1px solid #fff; 
-}
-.form-white .form-control:focus {
-    color: #fff;
-}
-.form-white .form-control {
-    color: #fff;
-}
-.form-white textarea.md-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #fff;
-    box-shadow: 0 1px 0 0 #fff;
-    color: #fff; 
-}
-.form-white textarea.md-textarea  {
-    border-bottom: 1px solid #fff;
-    color: #fff;
-}
-.form-white textarea.md-textarea:focus:not([readonly])+label {
-    color: #fff;
-}
-.ripe-malinka-gradient {
-    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-}
-.near-moon-gradient {
-    background-image: linear-gradient(to bottom, #5ee7df 0%, #b490ca 100%);
-}
-</style>
+                                    <button class="btn btn-outline-pink" type="submit">Register</button> #}

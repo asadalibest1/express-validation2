@@ -11,7 +11,6 @@ app.set('view engine', 'twig')
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 // bodyParser.json();
-
 app.get('/', (req, res)=>{
     res.render('app', {header: 'Form Validation'});
 });
@@ -20,7 +19,7 @@ app.get('/', (req, res)=>{
 // })
 app.post('/', [
     check('email', 'error acurred in email').trim().isEmail().normalizeEmail(),
-    check('password', 'Password must be greater then 10').trim().isLength({min: 10}),
+    check('password', 'Password must be greater then 5').trim().isLength({min: 5}),
     check('rePassword').custom((val, {req})=>{
         if(val !== req.body.password)
             throw new Error("Password did't match!");
@@ -33,7 +32,7 @@ var data = matchedData(req);
     if (!Errors.isEmpty())
         res.render('app', {errors: Errors.mapped(), Data: data, header: 'Form Validation'});
     else
-        res.render('app', {Data: data, header: 'Form Validation'});
+        res.render('result', {Data: data, header: 'Form Validation'});
 })
 
 
