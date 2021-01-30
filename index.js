@@ -15,7 +15,7 @@ app.get('/', (req, res)=>{
     res.render('app', {header: 'Form Validation'});
 });
 // app.post('/', (req, res)=>{
-//     console.log(matchedData());
+//     console.log(matchedData());  
 // })
 app.post('/', [
     check('email', 'error acurred in email').trim().isEmail().normalizeEmail(),
